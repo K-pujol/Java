@@ -1,16 +1,26 @@
 import java.util.Scanner;
 
+/**
+ * Classe main pour la gestion du nombre de livraison par cartons/capacité du camion
+ * @author Killian
+ * @version 1.0
+ */
 public class Main {
-    public static void main(String[] args) {
-        int cartons = 0;
-        int capaciteCamion = 0;
-        int nbVoyage = 0;
-        Scanner clavier = new Scanner(System.in);
-        System.out.println("Nombres de carton à déménager ? : ");
-        cartons = clavier.nextInt();
+    // Variables globales (static)
+    static int cartons = 0;
+    static int capaciteCamion = 0;
 
-        System.out.println("Capacité du camions ? : ");
-        capaciteCamion = clavier.nextInt();
+    public static void main(String[] args) {
+        /**
+         * Récupération des données utilisateur avec la fonction
+         */
+        getQuantityInfo();
+
+        int nbVoyage = 0;
+
+        /**
+         * Boucle qui calcul le nombre de voyage
+         */
         while (cartons > 0) {
             nbVoyage++;
 
@@ -24,5 +34,20 @@ public class Main {
         }
 
         System.out.println("Nombre total de voyages : " + nbVoyage);
+    }
+
+    /**
+     * Saisie du nombre de cartons et de la capacité du camion
+     */
+    public static void getQuantityInfo() {
+        Scanner clavier = new Scanner(System.in);
+
+        System.out.println("Nombres de carton à déménager ? : ");
+        cartons = clavier.nextInt();
+
+        System.out.println("Capacité du camions ? : ");
+        capaciteCamion = clavier.nextInt();
+
+        clavier.close();
     }
 }
