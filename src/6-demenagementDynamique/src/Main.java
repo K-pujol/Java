@@ -16,7 +16,7 @@ public class Main {
 
             if (cartons >= capaciteCamion) {
                 cartons = cartons - capaciteCamion;
-                System.out.println("Voyage " + nbVoyage + ": 9 cartons transportés. Reste: " + cartons);
+                System.out.println("Voyage " + nbVoyage + ": " + capaciteCamion + " cartons transportés. Reste: " + cartons);
             } else {
                 System.out.println("Voyage " + nbVoyage + ": " + cartons + " cartons transportés. Reste: 0");
                 cartons = 0;
