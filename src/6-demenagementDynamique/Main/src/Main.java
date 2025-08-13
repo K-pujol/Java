@@ -42,10 +42,20 @@ public class Main {
     public static void getQuantityInfo() {
         Scanner clavier = new Scanner(System.in);
 
+        // Saisie du nombre de cartons
         System.out.println("Nombres de carton à déménager ? : ");
+        while (!clavier.hasNextInt()) {
+            System.out.println("Veuillez saisir un nombre entier valide : ");
+            clavier.next();
+        }
         cartons = clavier.nextInt();
 
+        // Saisie de la capacité
         System.out.println("Capacité du camions ? : ");
+        while (!clavier.hasNextInt()) {
+            System.out.println("Veuillez saisir un nombre entier valide : ");
+            clavier.next();
+        }
         capaciteCamion = clavier.nextInt();
 
         clavier.close();
